@@ -2,21 +2,21 @@
     --color-letter: #d2d2d2;
     --color-letter2: #020305;
     --color-background: #020112;
-    --color-primary1: #4a073c;
-    --color-primary2: #9e0b41;
-    --color-primary3: #0e0b29;
+    --color-primary1: #020112;
+    --color-primary2: #d2d2d2;
+    --color-primary3: #090089;
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Noto Sans Mono', monospace;
 }
 
 body {
     background-color: var(--color-background);
     color: var(--color-letter);
-    font-family: sans-serif;
     font-size: 20px; 
     width: 100vw;
     height: 100vh; 
@@ -49,10 +49,11 @@ body:before {
     gap: 20px;
     border-radius: 2px;
     padding: 10px;
+    
 }
 
 .container h1 {
-    font-size: clamp(25px, 7vw, 50px);
+    font-size: clamp(25px, 5vw, 50px);
     width: 100%;
 }
 
@@ -63,12 +64,10 @@ body:before {
   }
   
   .typing-demo {
-    width: 22ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    font-family: monospace;
     font-size: 2em;
   }
   
@@ -95,21 +94,88 @@ body:before {
     gap: 20px;
 }
 
+#validator-container .div-relative {
+    position: relative;
+}
+
 .number {
     font-size: 16px;
     text-align: center;
     width: 200px;
     height: 25px;
     border: none;
-    outline: 0px solid #424242;
+    outline: 0px solid var(--color-primary3);
     border-radius: 2px;
-    z-index: 4;    
+    z-index: 4;  
 }
 
+.number:hover {
+    outline: 2px solid var(--color-primary3);
+}
+.number:focus {
+    outline: 2px solid var(--color-primary3);
+}
+
+.div-relative .div-absolute {
+    position: absolute;
+    top: 1px;
+    right: -28px;
+}
+
+
 .validated {
-    outline: 3px solid #770053;
+    outline: 1px solid #00df86;
+}
+
+.fa-circle-check {
+    color: #00df86;
 }
 
 .invalidated {
-    outline: 3px solid #2b1188;
+    outline: 1px solid #ef383b;
 }
+
+.fa-circle-xmark {
+    color: #ef383b;
+}
+
+
+
+
+#checker {
+    font-size: 20px;
+    color: var(--color-letter);
+    border-radius: 5px;
+    padding: 6px 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    background: var(--color-primary1);
+    border: none;
+    z-index: 1;
+}
+
+#checker:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: var(--color-primary2);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  #checker:hover {
+    color: var(--color-letter2);
+  }
+  #checker:hover:after {
+    left: 0;
+    width: 100%;
+  }
+  #checker:active {
+    top: 2px;
+  }
