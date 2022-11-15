@@ -1,9 +1,9 @@
 :root {
     --color-letter: #d2d2d2;
     --color-letter2: #020305;
-    --color-background: #020305;
-    --color-primary1: #770053;
-    --color-primary2: #62475a;
+    --color-background: #020112;
+    --color-primary1: #4a073c;
+    --color-primary2: #9e0b41;
     --color-primary3: #0e0b29;
 }
 
@@ -24,29 +24,92 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
+  
+body:before {
+    content: '';
+    position: absolute;
+    inset: 40% -60% 0 -60%;
+    background-image: radial-gradient(ellipse at bottom, #1D0559 0%, #020112 50%);
+    opacity: .4;
+}
+
 
 
 .container {
     width: 800px;
-    height: 250px;
+    height: auto;
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 20px;
     border-radius: 2px;
+    padding: 10px;
 }
 
 .container h1 {
-    font-size: clamp(20px, 7vw, 50px);
+    font-size: clamp(25px, 7vw, 50px);
+    width: 100%;
+}
+
+.wrapper {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+#validator-container {
+    width: clamp(200px, 30vw, 400px);
+    height: 100px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.number {
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+    height: 25px;
+    border: none;
+    outline: 0px solid #424242;
+    border-radius: 2px;
+    z-index: 4;    
 }
 
 .validated {
-    border: #770053;
+    outline: 3px solid #770053;
 }
 
 .invalidated {
-    border: #2b1188;
+    outline: 3px solid #2b1188;
 }
