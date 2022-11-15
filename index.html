@@ -6,6 +6,10 @@
         <title>Telephone Number Validator</title>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cf5a43be3d.js" crossorigin="anonymous"></script>
     </head>
     <body>
       <div class="container" data-aos="zoom-out">
@@ -13,7 +17,12 @@
             <h1 class="typing-demo" data-aos="zoom-out">Telephone Number Validator</h1>
         </div>
         <div id="validator-container">
-            <input type="text" class="number" id="number" placeholder=" 555-555-5555" required data-aos="zoom-out">
+            <div class="div-relative">
+                <input type="text" class="number" id="number" placeholder=" 555-555-5555" required data-aos="zoom-out">
+                <div class="div-absolute">
+                    <i id="fa" class="fa-solid"></i>
+                </div>
+            </div>
             <button id="checker" onclick="validator()" data-aos="zoom-out"><b>Check</b></button>
         </div>
       </div>
