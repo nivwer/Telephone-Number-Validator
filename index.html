@@ -9,19 +9,13 @@
     </head>
     <body>
       <div class="container" data-aos="zoom-out">
-        <h1 data-aos="zoom-out">Telephone Number Validator</h1>
-        <div>
-            <ul>
-                <li>555-555-5555</li>
-                <li>(555)555-5555</li>
-                <li>(555) 555-5555</li>
-                <li>555 555 5555</li>
-                <li>5555555555</li>
-                <li>1 555 555 5555</li>
-            </ul>
+        <div class="wrapper">
+            <h1 class="typing-demo" data-aos="zoom-out">Telephone Number Validator</h1>
         </div>
-        <input type="text" id="number" placeholder=" 555-555-5555" required data-aos="zoom-out">
-        <button id="checker" onclick="validator()" data-aos="zoom-out"><b>Check</b></button>
+        <div id="validator-container">
+            <input type="text" class="number" id="number" placeholder=" 555-555-5555" required data-aos="zoom-out">
+            <button id="checker" onclick="validator()" data-aos="zoom-out"><b>Check</b></button>
+        </div>
       </div>
       <script src="validator.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
