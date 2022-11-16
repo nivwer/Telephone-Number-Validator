@@ -24,14 +24,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
-    overflow: hidden;
 }
   
 body:before {
     content: '';
     position: absolute;
-    inset: 40% -60% 0 -60%;
+    inset: 60% 0 0 0;
     background-image: radial-gradient(ellipse at bottom, #1D0559 0%, #020112 50%);
     opacity: .4;
 }
